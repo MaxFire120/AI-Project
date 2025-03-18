@@ -1,0 +1,14 @@
+On print_board(board)
+"Consider adding a parameter to allow dynamic board sizes if you plan to expand the game."
+
+On get_ai_move(board, ai_player)
+"You should implement a basic AI move selection strategy, such as random moves or a minimax algorithm."
+
+On for turn in range(9):
+"Hardcoding 9 turns assumes a fixed 3x3 board. Consider dynamically setting this based on board size."
+
+On if player == "X":
+"This approach assumes 'X' is always the human player. Allow for player choice at the start."
+
+On return all(cell != " " for row in board for cell in row)
+"Checking for a full board every turn might be slightly inefficient; consider tracking move count separately."
