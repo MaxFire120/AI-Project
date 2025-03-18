@@ -6,7 +6,7 @@ For CIT381 Team 3
 4. Justice Akwetey
 
 Game
-Tic-Tac-Toe
+    Tic-Tac-Toe
 
 Programming Language
-Python
+    Python
