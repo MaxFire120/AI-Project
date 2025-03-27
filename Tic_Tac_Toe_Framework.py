@@ -9,12 +9,34 @@ This program includes:
 - Scoreboard
 - Themed Colors
 - Player Name Input
-- Sound Effects
+- Sound Effects (cross-platform)
+- Instructions for Running
+
+How to Run:
+1. Ensure Python is installed (https://python.org/downloads)
+2. Save this code in a file named `Tic_Tac_Toe_Framework.py`
+3. Open a terminal or command prompt
+4. Navigate to the folder where you saved the file
+5. Run the file with Python:
+   - On Windows: `python Tic_Tac_Toe_Framework.py`
+   - On Mac/Linux: `python3 Tic_Tac_Toe_Framework.py`
+6. The game window will open. Enjoy!
+
+Required Modules:
+- `tkinter` (comes with Python)
+- `random` and `os` (built-in)
+- `platform` (built-in)
+- No additional installation is required
+
+Note:
+- On **Windows**, sound effects use the `winsound` module (included with Python)
+- On **macOS/Linux**, a simple terminal beep is triggered for feedback
 """
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 import random
-import winsound
+import platform
+import os
 
 class TicTacToeGUI:
     def __init__(self, root):
@@ -175,14 +197,14 @@ class TicTacToeGUI:
 
     def play_sound(self, event):
         try:
-            if event == "click":
-                winsound.MessageBeep(winsound.MB_OK)
-            elif event == "ding":
-                winsound.MessageBeep(winsound.MB_ICONASTERISK)
-            elif event == "end":
-                winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
+            if platform.system() == "Windows":
+                import winsound
+                winsound.MessageBeep()
+            else:
+                if event == "click":
+                    os.system('printf ""')
         except:
-            pass  # In case sound fails or not on Windows
+            pass
 
 if __name__ == "__main__":
     root = tk.Tk()
