@@ -60,9 +60,9 @@ class TicTacToeGUI:
         self.score_label.pack(pady=5)
 
         self.board_frame = tk.Frame(self.root)
-        self.board_frame.pack()
+        self.board_frame.pack(expand=True)
 
-        self.buttons = [[tk.Button(self.board_frame, text="", font=("Helvetica", 24), width=5, height=2,
+        self.buttons = [[tk.Button(self.board_frame, text="", font=("Helvetica", 48), width=6, height=3,
                                    bg="#f0f0f0", fg="black",
                                    command=lambda r=r, c=c: self.player_move(r, c))
                          for c in range(3)] for r in range(3)]
