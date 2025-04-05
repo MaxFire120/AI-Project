@@ -90,7 +90,8 @@ class TicTacToeGUI:
             self.board[row][col] = "X"
             self.buttons[row][col]["text"] = "X"
             self.buttons[row][col]["state"] = "disabled"
-            self.buttons[row][col]["bg"] = "#add8e6"
+            self.buttons[row][col]["bg"] = "#cce6ff"
+            self.buttons[row][col]["fg"] = "#003366"
 
             if self.check_winner("X"):
                 self.end_game(f"{self.player_name} wins!", winner="X")
@@ -108,7 +109,8 @@ class TicTacToeGUI:
             self.board[r][c] = "O"
             self.buttons[r][c]["text"] = "O"
             self.buttons[r][c]["state"] = "disabled"
-            self.buttons[r][c]["bg"] = "#ffcccb"
+            self.buttons[r][c]["bg"] = "#ffe6e6"
+            self.buttons[r][c]["fg"] = "#990000"
 
             if self.check_winner("O"):
                 self.end_game("AI O wins!", winner="O")
@@ -208,5 +210,6 @@ class TicTacToeGUI:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    root.geometry("600x600")
     game = TicTacToeGUI(root)
     root.mainloop()
