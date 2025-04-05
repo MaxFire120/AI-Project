@@ -210,6 +210,9 @@ class TicTacToeGUI:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.geometry("600x600")
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.geometry(f"{screen_width}x{screen_height}")
+    root.geometry("1920x1080")
     game = TicTacToeGUI(root)
     root.mainloop()
